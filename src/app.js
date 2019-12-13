@@ -1,5 +1,6 @@
 const express = require('express');
 const routes = require('./routes/routes');
+const { Product } = require('./db/index');
 
 const port = 3001;
 

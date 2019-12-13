@@ -1,0 +1,7 @@
+{
+  "DATABASE_NAME": "falabella",
+  "USERNAME": "root",
+  "PASSWORD": "",
+  "HOST": "localhost",
+  "DIALECT": "mysql"
+}
