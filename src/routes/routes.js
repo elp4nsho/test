@@ -1,3 +1,4 @@
 const product = require('./controllers/productController');
-const routes = {product};
+const sale = require('./controllers/saleController');
+const routes = {product,sale};
 module.exports = routes;

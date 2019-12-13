@@ -1,7 +1,8 @@
+const {DATABASE_NAME, USERNAME, PASSWORD, HOST, DIALECT} = require('../config/database');
 const Sequelize = require('sequelize');
 
 const ProductModel = require('./models/product');
-const {DATABASE_NAME, USERNAME, PASSWORD, HOST, DIALECT} = require('../config/database');
+const SaleModel = require('./models/sale');
 
 const sequelize = new Sequelize(DATABASE_NAME, USERNAME, PASSWORD, {
     host: HOST,
@@ -15,6 +16,7 @@ const sequelize = new Sequelize(DATABASE_NAME, USERNAME, PASSWORD, {
 });
 
 const Product = ProductModel(sequelize, Sequelize);
+const Sale = SaleModel(sequelize, Sequelize);
 
 
 sequelize.sync({force: false})
@@ -23,5 +25,6 @@ sequelize.sync({force: false})
     });
 
 module.exports = {
-    Product
+    Product,
+    Sale
 };
