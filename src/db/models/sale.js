@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, type) => {
     return sequelize.define('sale', {
         id: {
@@ -5,8 +6,8 @@ module.exports = (sequelize, type) => {
             primaryKey: true,
             autoIncrement: true
         },
-        productId: type.INTEGER,
-        selln: type.STRING,
-        price: type.STRING,
+        productId: {
+            type: type.INTEGER
+        }
     })
 };

@@ -15,9 +15,12 @@ const sequelize = new Sequelize(DATABASE_NAME, USERNAME, PASSWORD, {
     }
 });
 
+
 const Product = ProductModel(sequelize, Sequelize);
 const Sale = SaleModel(sequelize, Sequelize);
 
+Product.hasMany(Sale);
+Sale.belongsTo(Product);
 
 sequelize.sync({force: false})
     .then(() => {
