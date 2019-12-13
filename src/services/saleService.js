@@ -1,11 +1,18 @@
-const {Sale} = require('../db/index');
+const {Sale, Product} = require('../db/index');
 
 exports.findAll = () => {
 
-    return Sale.findAll()
+    return Sale.findAll({
+        include: [{
+            model: Product,
+            required: true,
+            attributes:['productName']
+        }],
+        attributes:['id','createdAt']
+    })
 };
 exports.add = (obj) => {
-    return Sale.bulkCreate(obj)
+    return Sale.create(obj)
 };
 
 exports.findById = (id) => {
@@ -21,7 +28,7 @@ exports.delete = (id) => {
 };
 exports.update = (id, obj) => {
     console.log(obj);
-    return Product.update(obj,{
-        where:{id}
+    return Product.update(obj, {
+        where: {id}
     });
 };
