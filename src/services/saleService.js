@@ -1,7 +1,6 @@
 const {Sale, Product} = require('../db/index');
 
 exports.findAll = () => {
-
     return Sale.findAll({
         include: [{
             model: Product,

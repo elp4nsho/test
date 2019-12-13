@@ -1,5 +1,6 @@
 const {DATABASE_NAME, USERNAME, PASSWORD, HOST, DIALECT} = require('../config/database');
 const Sequelize = require('sequelize');
+const actions = require('../core/global');
 
 const ProductModel = require('./models/product');
 const SaleModel = require('./models/sale');
@@ -25,9 +26,16 @@ Sale.belongsTo(Product);
 sequelize.sync({force: false})
     .then(() => {
         console.log("database created succesfully")
-    });
 
+
+    });
+function aDay(){
+    actions.sellnDecreaseAll(Product);
+    actions.priceDecreaseAll(Product);
+    Sale.findAll
+}
 module.exports = {
     Product,
-    Sale
+    Sale,
+    aDay
 };

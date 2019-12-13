@@ -1,4 +1,4 @@
-const {Product} = require('../db/index');
+const {Product,aDay} = require('../db/index');
 
 exports.findAll = () => {
     return Product.findAll()
@@ -23,4 +23,9 @@ exports.update = (id, obj) => {
     return Product.update(obj,{
         where:{id}
     });
+};
+exports.evaluateProducts = (days)=>{
+  for(let i = 0;i<days;i++){
+      aDay();
+  }
 };

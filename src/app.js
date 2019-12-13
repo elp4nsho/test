@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use('/product', routes.product);
 app.use('/sale', routes.sale);
 
+
 app.listen(port, () =>
     console.log(`listening on port ${port}!`),
 );

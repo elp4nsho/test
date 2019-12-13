@@ -53,4 +53,9 @@ router.put('/:id', (req, res) => {
         });
 });
 
+router.get('/evaluateProducts/:days', (req, res) => {
+    service.evaluateProducts(req.params.days)
+    res.json({})
+});
+
 module.exports = router;
