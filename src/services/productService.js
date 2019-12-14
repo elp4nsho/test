@@ -19,7 +19,6 @@ exports.delete = (id) => {
     })
 };
 exports.update = (id, obj) => {
-    console.log(obj);
     return Product.update(obj, {
         where: {id}
     });

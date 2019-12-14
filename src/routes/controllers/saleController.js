@@ -43,7 +43,7 @@ router.delete('/:id', (req, res) => {
         });
 });
 
-router.put('/:id', (req, res) => {
+/*router.put('/:id', (req, res) => {
     service.update(req.params.id,req.body)
         .then(obj => {
             response.responseOk(res,obj);
@@ -51,7 +51,7 @@ router.put('/:id', (req, res) => {
         .catch(e=>{
             response.responseError(res,e);
         });
-});
+});*/
 
 
 module.exports = router;

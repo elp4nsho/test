@@ -5,9 +5,9 @@ exports.findAll = () => {
         include: [{
             model: Product,
             required: true,
-            attributes:['productName']
+            attributes: ['productName']
         }],
-        attributes:[['id','ventaId']]
+        attributes: [['id', 'ventaId']]
     })
 };
 exports.add = (obj) => {
@@ -16,6 +16,13 @@ exports.add = (obj) => {
 
 exports.findById = (id) => {
     return Sale.findOne({
+        include: [{
+            model: Product,
+            required: true,
+            attributes: ['productName']
+        }],
+        attributes: [['id', 'ventaId']]
+    }, {
         where: {id}
     });
 
@@ -26,7 +33,6 @@ exports.delete = (id) => {
     })
 };
 exports.update = (id, obj) => {
-    console.log(obj);
     return Product.update(obj, {
         where: {id}
     });
