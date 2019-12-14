@@ -10,7 +10,8 @@ module.exports = (sequelize, type) => {
         price: {
             type:type.INTEGER,
             validate:{
-                max:100
+                max:100,
+                min:0
             }
         },
     })

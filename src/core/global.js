@@ -16,15 +16,15 @@ function priceDecreaseAll(ent) {
         where: {
             productName: {[Op.and]:[{[Op.ne]:"Mega Cobertura"},{[Op.ne]:"Super avance"}]},
             selln: {[Op.gte]: 0},
-            price: {[Op.gt]: 0},
+            price: {[Op.or]:[{[Op.gt]: 0},{[Op.eq]:1}]},
 
         }
     });
     ent.increment({'price': -2}, {
         where: {
-            productName: {[Op.or]:[{[Op.ne]:"Mega Cobertura"},{[Op.ne]:"Super avance"}]},
+            productName: {[Op.and]:[{[Op.ne]:"Mega Cobertura"},{[Op.ne]:"Super avance"}]},
             selln: {[Op.lt]: 0},
-            price: {[Op.gt]: 0},
+            price: {[Op.gt]: 1},
 
         }
     });
