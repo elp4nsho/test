@@ -7,7 +7,7 @@ exports.findAll = () => {
             required: true,
             attributes:['productName']
         }],
-        attributes:['id','createdAt']
+        attributes:[['id','ventaId']]
     })
 };
 exports.add = (obj) => {

@@ -23,17 +23,21 @@ const Sale = SaleModel(sequelize, Sequelize);
 Product.hasMany(Sale);
 Sale.belongsTo(Product);
 
+
 sequelize.sync({force: false})
     .then(() => {
         console.log("database created succesfully")
 
 
     });
+
+
 function aDay(){
     actions.sellnDecreaseAll(Product);
     actions.priceDecreaseAll(Product);
-    Sale.findAll
+
 }
+
 module.exports = {
     Product,
     Sale,

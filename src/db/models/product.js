@@ -7,6 +7,11 @@ module.exports = (sequelize, type) => {
         },
         productName: type.STRING,
         selln: type.STRING,
-        price: type.STRING,
+        price: {
+            type:type.INTEGER,
+            validate:{
+                max:100
+            }
+        },
     })
 };

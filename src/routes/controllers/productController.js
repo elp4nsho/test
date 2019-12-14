@@ -54,8 +54,14 @@ router.put('/:id', (req, res) => {
 });
 
 router.get('/evaluateProducts/:days', (req, res) => {
+
     service.evaluateProducts(req.params.days)
-    res.json({})
+        .then(obj => {
+            response.responseOk(res, obj);
+        })
+        .catch(e => {
+            response.responseError(res, e);
+        });
 });
 
 module.exports = router;

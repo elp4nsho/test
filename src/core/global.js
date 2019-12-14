@@ -14,7 +14,7 @@ function sellnDecreaseAll(ent) {
 function priceDecreaseAll(ent) {
     ent.increment({'price': -1}, {
         where: {
-            productName: {[Op.or]:[{[Op.ne]:"Mega Cobertura"},{[Op.ne]:"Super avance"}]},
+            productName: {[Op.and]:[{[Op.ne]:"Mega Cobertura"},{[Op.ne]:"Super avance"}]},
             selln: {[Op.gte]: 0},
             price: {[Op.gt]: 0},
 
