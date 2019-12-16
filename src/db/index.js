@@ -8,7 +8,7 @@ const datosBase = require("./constants");
 
 
 const sequelize = new Sequelize(DATABASE_NAME, USERNAME, PASSWORD, {
-    host: HOST,
+    host: process.env.MYSQL_HOST || HOST,
     dialect: DIALECT,
     pool: {
         max: 10,

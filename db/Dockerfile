@@ -1,0 +1,5 @@
+FROM mysql:5.7
+
+ENV MYSQL_DATABASE=falabella \
+    MYSQL_ROOT_PASSWORD=P4ssw0rd
+
