@@ -20,7 +20,7 @@ en el tiempo._
 ## Ejemplo 📌
 
 ```
-POST http://localhost:3001/demoApi/author
+POST http://localhost:3001/product/all
 ```
 
 ```
